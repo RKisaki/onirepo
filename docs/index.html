@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OniRepo — Extensiones para Mihon</title>
+<meta name="description" content="Repositorio de extensiones para Mihon/Tachiyomi. Manhwa, manhua, manga en español.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --bg: #0a0a0f;
+  --surface: #111118;
+  --card: #18181f;
+  --border: #252530;
+  --accent: #7c6af7;
+  --accent-glow: rgba(124,106,247,.25);
+  --accent2: #e8494a;
+  --green: #3dd68c;
+  --yellow: #f5a623;
+  --red: #e8494a;
+  --text: #f0f0f8;
+  --dim: #8888a8;
+  --muted: #444458;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+}
+
+/* ── GRID BG ── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(124,106,247,.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(124,106,247,.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── NAV ── */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(10,10,15,.85);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 2rem; height: 60px;
+}
+
+.nav-logo {
+  font-family: 'Space Mono', monospace;
+  font-size: .95rem;
+  font-weight: 700;
+  display: flex; align-items: center; gap: 8px;
+  text-decoration: none; color: var(--text);
+}
+
+.nav-logo .dot { color: var(--accent); }
+
+.nav-pill {
+  background: var(--accent-glow);
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  font-family: 'Space Mono', monospace;
+  font-size: .7rem;
+  padding: .25rem .7rem;
+  border-radius: 20px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background .2s;
+}
+.nav-pill:hover { background: rgba(124,106,247,.4); }
+
+/* ── HERO ── */
+.hero {
+  position: relative; z-index: 1;
+  max-width: 860px; margin: 0 auto;
+  padding: 5rem 2rem 3rem;
+  text-align: center;
+}
+
+.hero-badge {
+  display: inline-block;
+  font-family: 'Space Mono', monospace;
+  font-size: .68rem;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  background: var(--accent-glow);
+  border-radius: 20px;
+  padding: .3rem .8rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  letter-spacing: -1px;
+}
+
+.hero h1 .hi { color: var(--accent); }
+
+.hero p {
+  color: var(--dim);
+  font-size: 1rem;
+  max-width: 520px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.7;
+}
+
+/* ── URL BOX ── */
+.url-box {
+  background: var(--card);
+  border: 1px solid var(--accent);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  display: flex; align-items: center; gap: 1rem;
+  max-width: 600px; margin: 0 auto 1rem;
+  box-shadow: 0 0 30px var(--accent-glow);
+}
+
+.url-label {
+  font-family: 'Space Mono', monospace;
+  font-size: .65rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  white-space: nowrap;
+}
+
+.url-text {
+  font-family: 'Space Mono', monospace;
+  font-size: .8rem;
+  color: var(--text);
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.copy-btn {
+  background: var(--accent);
+  border: none; border-radius: 7px;
+  color: #fff;
+  font-family: 'Space Mono', monospace;
+  font-size: .7rem;
+  font-weight: 700;
+  padding: .4rem .8rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: opacity .2s;
+}
+.copy-btn:hover { opacity: .85; }
+.copy-btn.copied { background: var(--green); }
+
+.url-hint {
+  font-size: .75rem;
+  color: var(--muted);
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.url-hint b { color: var(--dim); }
+
+/* ── STEPS ── */
+.steps {
+  max-width: 860px; margin: 0 auto;
+  padding: 0 2rem 4rem;
+  position: relative; z-index: 1;
+}
+
+.steps-title {
+  font-family: 'Space Mono', monospace;
+  font-size: .7rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 1.25rem;
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: .75rem;
+  margin-bottom: 3rem;
+}
+
+.step {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1rem 1.1rem;
+  display: flex; gap: .75rem; align-items: flex-start;
+}
+
+.step-num {
+  font-family: 'Space Mono', monospace;
+  font-size: .7rem;
+  color: var(--accent);
+  background: var(--accent-glow);
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  width: 24px; height: 24px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.step-text { font-size: .85rem; color: var(--dim); line-height: 1.5; }
+.step-text b { color: var(--text); display: block; margin-bottom: .2rem; }
+
+/* ── EXTENSIONS TABLE ── */
+.ext-section {
+  max-width: 860px; margin: 0 auto;
+  padding: 0 2rem 5rem;
+  position: relative; z-index: 1;
+}
+
+.section-header {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 1rem;
+  padding-bottom: .6rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.section-header h2 {
+  font-family: 'Space Mono', monospace;
+  font-size: .75rem;
+  color: var(--dim);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.ext-count {
+  font-family: 'Space Mono', monospace;
+  font-size: .7rem;
+  color: var(--muted);
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: .15rem .6rem;
+}
+
+.filter-row {
+  display: flex; gap: .4rem; flex-wrap: wrap;
+  margin-bottom: 1.25rem;
+}
+
+.ftag {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: .3rem .8rem;
+  font-size: .75rem;
+  color: var(--dim);
+  cursor: pointer;
+  transition: all .2s;
+  font-family: 'Inter', sans-serif;
+}
+.ftag:hover { border-color: var(--accent); color: var(--text); }
+.ftag.on { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+/* Extension cards */
+.ext-list { display: flex; flex-direction: column; gap: .6rem; }
+
+.ext-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: .9rem 1.1rem;
+  display: flex; align-items: center; gap: 1rem;
+  transition: border-color .2s;
+}
+.ext-card:hover { border-color: var(--accent); }
+.ext-card.hidden { display: none; }
+
+.ext-icon {
+  width: 44px; height: 44px; border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: .85rem;
+  font-family: 'Space Mono', monospace;
+  flex-shrink: 0;
+}
+
+.ext-info { flex: 1; min-width: 0; }
+
+.ext-name {
+  font-weight: 600; font-size: .9rem;
+  margin-bottom: .25rem;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+
+.ext-meta {
+  display: flex; gap: .5rem; align-items: center; flex-wrap: wrap;
+}
+
+.ext-pkg {
+  font-family: 'Space Mono', monospace;
+  font-size: .65rem;
+  color: var(--muted);
+}
+
+.badge {
+  font-size: .62rem;
+  padding: .12rem .4rem;
+  border-radius: 4px;
+  font-family: 'Space Mono', monospace;
+}
+.badge-lang  { background: rgba(124,106,247,.15); color: var(--accent); border: 1px solid rgba(124,106,247,.25); }
+.badge-ver   { background: rgba(61,214,140,.1);   color: var(--green);  border: 1px solid rgba(61,214,140,.2);  }
+.badge-type  { background: rgba(245,166,35,.1);    color: var(--yellow); border: 1px solid rgba(245,166,35,.2);  }
+.badge-nsfw  { background: rgba(232,73,74,.1);     color: var(--red);    border: 1px solid rgba(232,73,74,.2);   }
+
+.ext-status {
+  display: flex; flex-direction: column; align-items: flex-end; gap: .4rem;
+  flex-shrink: 0;
+}
+
+.status-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+}
+.s-up   { background: var(--green); box-shadow: 0 0 6px var(--green); }
+.s-slow { background: var(--yellow); box-shadow: 0 0 6px var(--yellow); }
+.s-down { background: var(--red); box-shadow: 0 0 6px var(--red); }
+
+.apk-btn {
+  font-family: 'Space Mono', monospace;
+  font-size: .65rem;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--dim);
+  border-radius: 6px;
+  padding: .25rem .55rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all .2s;
+  white-space: nowrap;
+}
+.apk-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ── CONTRIBUTE ── */
+.contribute {
+  max-width: 860px; margin: 0 auto;
+  padding: 0 2rem 5rem;
+  position: relative; z-index: 1;
+}
+
+.contribute-box {
+  background: var(--card);
+  border: 1px dashed var(--border);
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+}
+
+.contribute-box h3 {
+  font-family: 'Space Mono', monospace;
+  font-size: .9rem;
+  margin-bottom: .5rem;
+}
+
+.contribute-box p {
+  font-size: .85rem;
+  color: var(--dim);
+  margin-bottom: 1.25rem;
+  line-height: 1.6;
+}
+
+.gh-btn {
+  display: inline-flex; align-items: center; gap: .5rem;
+  background: var(--accent);
+  color: #fff;
+  font-family: 'Space Mono', monospace;
+  font-size: .8rem;
+  font-weight: 700;
+  padding: .6rem 1.2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: opacity .2s;
+}
+.gh-btn:hover { opacity: .85; }
+
+/* ── FOOTER ── */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 1.5rem 2rem;
+  text-align: center;
+  font-size: .75rem;
+  color: var(--muted);
+  font-family: 'Space Mono', monospace;
+  position: relative; z-index: 1;
+}
+
+footer a { color: var(--accent); text-decoration: none; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 600px) {
+  nav, .steps, .ext-section, .contribute { padding-left: 1rem; padding-right: 1rem; }
+  .hero { padding: 3rem 1rem 2rem; }
+  .url-box { flex-wrap: wrap; }
+  .ext-pkg { display: none; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="#">Oni<span class="dot">Repo</span></a>
+  <a class="nav-pill" href="https://github.com/TU_USUARIO/onirepo" target="_blank">⭐ GitHub</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-badge">// Repositorio de extensiones · Mihon compatible</div>
+  <h1>Extensiones para<br><span class="hi">Mihon</span> en español</h1>
+  <p>Manhwa, manhua y manga con fuentes estables, actualizadas y en tu idioma. Agrega la URL en Mihon y listo.</p>
+
+  <div class="url-box">
+    <span class="url-label">Repo URL</span>
+    <span class="url-text" id="repo-url">https://TU_USUARIO.github.io/onirepo/repo/index.min.json</span>
+    <button class="copy-btn" id="copy-btn" onclick="copyUrl()">Copiar</button>
+  </div>
+  <p class="url-hint">Pega esta URL en <b>Mihon → Extensiones → Repositorios</b></p>
+</section>
+
+<section class="steps">
+  <div class="steps-title">// Cómo agregar el repositorio</div>
+  <div class="steps-grid">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-text"><b>Copia la URL</b>Usa el botón de arriba para copiar la dirección del repo.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-text"><b>Abre Mihon</b>Ve a Más → Configuración → Extensiones.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-text"><b>Agrega el repo</b>Toca "Repositorios de extensiones" y pega la URL.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-text"><b>Instala</b>Las extensiones aparecen en la lista. Instálalas una a una.</div>
+    </div>
+  </div>
+</section>
+
+<section class="ext-section">
+  <div class="section-header">
+    <h2>// Extensiones disponibles</h2>
+    <span class="ext-count" id="ext-count">12 extensiones</span>
+  </div>
+
+  <div class="filter-row">
+    <button class="ftag on" data-f="all">Todas</button>
+    <button class="ftag" data-f="manhwa">Manhwa</button>
+    <button class="ftag" data-f="manhua">Manhua</button>
+    <button class="ftag" data-f="manga">Manga</button>
+    <button class="ftag" data-f="multi">Multi</button>
+  </div>
+
+  <div class="ext-list" id="ext-list"></div>
+</section>
+
+<section class="contribute">
+  <div class="contribute-box">
+    <h3>¿Falta una fuente?</h3>
+    <p>Este repositorio es open-source. Si una extensión está rota o quieres agregar una nueva fuente,<br>abre un issue o un pull request en GitHub.</p>
+    <a class="gh-btn" href="https://github.com/TU_USUARIO/onirepo/issues" target="_blank">
+      ＋ Solicitar extensión
+    </a>
+  </div>
+</section>
+
+<footer>
+  OniRepo · Solo para uso personal · No afiliado a Mihon ni a ningún sitio listado ·
+  <a href="https://mihon.app" target="_blank">mihon.app</a>
+</footer>
+
+<script>
+const EXTENSIONS = [
+  { name:"AsuraScans",      pkg:"es.asurascans",      apk:"tachiyomi-es.asurascans-v1.4.apk",      ver:"1.4.0", type:"manhwa", icon:"AS", color:"#1a0d0d", ic:"#e8494a", status:"up"   },
+  { name:"FlameScans",      pkg:"es.flamescans",      apk:"tachiyomi-es.flamescans-v1.3.apk",      ver:"1.3.0", type:"manhwa", icon:"FS", color:"#1e1600", ic:"#ff8c42", status:"up"   },
+  { name:"ReaperScans",     pkg:"es.reaperscans",     apk:"tachiyomi-es.reaperscans-v1.5.apk",     ver:"1.5.0", type:"manhwa", icon:"RS", color:"#0a1020", ic:"#7c6af7", status:"up"   },
+  { name:"LuminousScans",   pkg:"es.luminousscans",   apk:"tachiyomi-es.luminousscans-v1.2.apk",   ver:"1.2.0", type:"manhwa", icon:"LS", color:"#0d0d1a", ic:"#9b86f7", status:"up"   },
+  { name:"ZinManga",        pkg:"es.zinmanga",        apk:"tachiyomi-es.zinmanga-v1.0.apk",        ver:"1.0.0", type:"manhua", icon:"ZM", color:"#0a180e", ic:"#3dd68c", status:"up"   },
+  { name:"ManhuaFast",      pkg:"es.manhuafast",      apk:"tachiyomi-es.manhuafast-v1.1.apk",      ver:"1.1.0", type:"manhua", icon:"MF", color:"#1a1000", ic:"#f5a623", status:"up"   },
+  { name:"Mangatoon",       pkg:"es.mangatoon",       apk:"tachiyomi-es.mangatoon-v1.2.apk",       ver:"1.2.0", type:"multi",  icon:"MT", color:"#100d1a", ic:"#7c6af7", status:"up"   },
+  { name:"Bilibili Comics", pkg:"es.bilibilicomics",  apk:"tachiyomi-es.bilibilicomics-v1.3.apk",  ver:"1.3.0", type:"manhua", icon:"BB", color:"#0a1018", ic:"#4a8fe8", status:"up"   },
+  { name:"MangaDex",        pkg:"es.mangadex",        apk:"tachiyomi-es.mangadex-v1.8.apk",        ver:"1.8.0", type:"multi",  icon:"MD", color:"#0d0d1a", ic:"#ff652f", status:"up"   },
+  { name:"MangaPlus",       pkg:"es.mangaplus",       apk:"tachiyomi-es.mangaplus-v1.9.apk",       ver:"1.9.0", type:"manga",  icon:"MP", color:"#1a0808", ic:"#e8494a", status:"up"   },
+  { name:"MangaFire",       pkg:"es.mangafire",       apk:"tachiyomi-es.mangafire-v1.6.apk",       ver:"1.6.0", type:"manga",  icon:"MF", color:"#180e00", ic:"#f5a623", status:"up"   },
+  { name:"Webtoon",         pkg:"es.webtoon",         apk:"tachiyomi-es.webtoon-v2.1.apk",         ver:"2.1.0", type:"manhwa", icon:"WT", color:"#081a0e", ic:"#3dd68c", status:"up"   },
+];
+
+const TYPE_LABEL = { manhwa:"Manhwa", manhua:"Manhua", manga:"Manga", multi:"Multi" };
+const STATUS_CLASS = { up:"s-up", slow:"s-slow", down:"s-down" };
+
+function render(filter = "all") {
+  const list = document.getElementById("ext-list");
+  const items = filter === "all" ? EXTENSIONS : EXTENSIONS.filter(e => e.type === filter);
+  document.getElementById("ext-count").textContent = `${items.length} extensiones`;
+
+  list.innerHTML = items.map(e => `
+    <div class="ext-card" data-type="${e.type}">
+      <div class="ext-icon" style="background:${e.color};color:${e.ic}">${e.icon}</div>
+      <div class="ext-info">
+        <div class="ext-name">${e.name}</div>
+        <div class="ext-meta">
+          <span class="ext-pkg">eu.kanade.tachiyomi.extension.${e.pkg}</span>
+          <span class="badge badge-lang">ES</span>
+          <span class="badge badge-ver">v${e.ver}</span>
+          <span class="badge badge-type">${TYPE_LABEL[e.type]}</span>
+        </div>
+      </div>
+      <div class="ext-status">
+        <div class="status-dot ${STATUS_CLASS[e.status]}"></div>
+        <a class="apk-btn" href="repo/${e.apk}" download>↓ APK</a>
+      </div>
+    </div>
+  `).join('');
+}
+
+render();
+
+document.querySelectorAll('.ftag').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.ftag').forEach(b => b.classList.remove('on'));
+    btn.classList.add('on');
+    render(btn.dataset.f);
+  });
+});
+
+function copyUrl() {
+  const url = document.getElementById('repo-url').textContent;
+  navigator.clipboard.writeText(url).then(() => {
+    const btn = document.getElementById('copy-btn');
+    btn.textContent = '✓ Copiado';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = 'Copiar'; btn.classList.remove('copied'); }, 2000);
+  });
+}
+</script>
+</body>
+                            </html>
