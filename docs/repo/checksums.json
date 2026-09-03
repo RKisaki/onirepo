@@ -1,0 +1,62 @@
+{
+  "eu.kanade.tachiyomi.extension.all.mangadex": {
+    "apk": "tachiyomi-all.mangadex-v1.4.212.apk",
+    "sha256": "505862062904e6784ea24742a6b77d958e7feb7b5e197e2f4134f7ae01a9a3de",
+    "upstream": "https://github.com/keiyoushi/extensions/releases/download/7bd0361-0/tachiyomi-all.mangadex-v1.4.212.apk"
+  },
+  "eu.kanade.tachiyomi.extension.all.mangaplus": {
+    "apk": "tachiyomi-all.mangaplus-v1.6.65.apk",
+    "sha256": "87a6114eb1715c2371ecc70ce0ef55af260d1819cb08efefbea8e5c529a19bd2",
+    "upstream": "https://github.com/keiyoushi/extensions/releases/download/34e4d51-0/tachiyomi-all.mangaplus-v1.6.65.apk"
+  },
+  "eu.kanade.tachiyomi.extension.all.webtoons": {
+    "apk": "tachiyomi-all.webtoons-v1.4.57.apk",
+    "sha256": "ebbfd3e9249bbbb9715288cf30835548c1217bef04a939bec319ec7bba295329",
+    "upstream": "https://github.com/keiyoushi/extensions/releases/download/34e4d51-0/tachiyomi-all.webtoons-v1.4.57.apk"
+  },
+  "eu.kanade.tachiyomi.extension.es.bibliopanda": {
+    "apk": "tachiyomi-es.bibliopanda-v1.4.55.apk",
+    "sha256": "d4c73bc28c196fcc860d0410ac56a56ef5c708daed46523f668dae55decebed9",
+    "upstream": "https://github.com/keiyoushi/extensions/releases/download/34e4d51-1/tachiyomi-es.bibliopanda-v1.4.55.apk"
+  },
+  "eu.kanade.tachiyomi.extension.es.mangacrab": {
+    "apk": "tachiyomi-es.mangacrab-v1.4.75.apk",
+    "sha256": "443c139a556c505437c6dc556dcd604a688bb2b3d5e5eb192450315bd2080ad3",
+    "upstream": "https://github.com/keiyoushi/extensions/releases/download/34e4d51-1/tachiyomi-es.mangacrab-v1.4.75.apk"
+  },
+  "eu.kanade.tachiyomi.extension.es.mangamx": {
+    "apk": "tachiyomi-es.mangamx-v1.4.19.apk",
+    "sha256": "fcc4f5a73ed58e2f0df9e196dfd03dfee2f43ca153bbfec46b1da0d0e4cdbb01",
+    "upstream": "https://github.com/keiyoushi/extensions/releases/download/34e4d51-1/tachiyomi-es.mangamx-v1.4.19.apk"
+  },
+  "eu.kanade.tachiyomi.extension.es.mangasnosekai": {
+    "apk": "tachiyomi-es.mangasnosekai-v1.4.71.apk",
+    "sha256": "fda94156561a0c8b97c4111c7890b165a7f49bdfe1bd9b4e3a364f570facb2ca",
+    "upstream": "https://github.com/keiyoushi/extensions/releases/download/34e4d51-1/tachiyomi-es.mangasnosekai-v1.4.71.apk"
+  },
+  "eu.kanade.tachiyomi.extension.es.mangasin": {
+    "apk": "tachiyomi-es.mangasin-v1.4.21.apk",
+    "sha256": "a7fd35b30ca9f988dd9564bf120892533f4ff05d8c82ac8d5a01cf22bd859cfe",
+    "upstream": "https://github.com/keiyoushi/extensions/releases/download/34e4d51-1/tachiyomi-es.mangasin-v1.4.21.apk"
+  },
+  "eu.kanade.tachiyomi.extension.es.manhwalatino": {
+    "apk": "tachiyomi-es.manhwalatino-v1.4.63.apk",
+    "sha256": "cf04fd80e57c57fdc250455004dd24291980fbae42300d94a82103d6e80eaac4",
+    "upstream": "https://github.com/keiyoushi/extensions/releases/download/34e4d51-1/tachiyomi-es.manhwalatino-v1.4.63.apk"
+  },
+  "eu.kanade.tachiyomi.extension.es.manhwaonline": {
+    "apk": "tachiyomi-es.manhwaonline-v1.6.56.apk",
+    "sha256": "97d4f149de6378f28f2ad8a2eb5c996b47056f572aad819e373a472e529cfe91",
+    "upstream": "https://github.com/keiyoushi/extensions/releases/download/34e4d51-1/tachiyomi-es.manhwaonline-v1.6.56.apk"
+  },
+  "eu.kanade.tachiyomi.extension.es.mhscans": {
+    "apk": "tachiyomi-es.mhscans-v1.4.66.apk",
+    "sha256": "3023f411347cda6bb2a45f0254ae1dec966220f95c0faa2f259bbf06269725eb",
+    "upstream": "https://github.com/keiyoushi/extensions/releases/download/34e4d51-1/tachiyomi-es.mhscans-v1.4.66.apk"
+  },
+  "eu.kanade.tachiyomi.extension.es.mundomanhwa": {
+    "apk": "tachiyomi-es.mundomanhwa-v1.6.54.apk",
+    "sha256": "70474638ee26aa45c4b096aa4ada43ada002dcd6236e2e7733533ddedb4fd34e",
+    "upstream": "https://github.com/keiyoushi/extensions/releases/download/34e4d51-1/tachiyomi-es.mundomanhwa-v1.6.54.apk"
+  }
+}

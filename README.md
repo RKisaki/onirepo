@@ -1,122 +1,84 @@
-# 🔱 OniRepo — Repositorio de Extensiones para Mihon
+# 🔱 OniRepo — extensiones en español para Mihon
 
-Repositorio de extensiones compatible con **Mihon** (antes Tachiyomi) enfocado en contenido en **español**: manhwa, manhua, manga y más.
+Repositorio compacto de extensiones para **Mihon 0.20.1 o posterior**. Los APK se espejan desde [Keiyoushi](https://github.com/keiyoushi/extensions), conservan su firma original y se publican únicamente cuando su SHA-256 coincide con el manifiesto del distribuidor.
 
-## 📲 Agregar el repositorio en Mihon
+## Añadir a Mihon
 
-```
-https://TU_USUARIO.github.io/onirepo/repo/index.min.json
-```
+Usa esta URL:
 
-**Pasos:**
-1. Abre Mihon
-2. Ve a **Más → Configuración → Extensiones**
-3. Toca **"Repositorios de extensiones"**
-4. Pega la URL de arriba
-5. Confirma y luego ve a **Extensiones** para instalar las que quieras
-
----
-
-## 📁 Estructura del repositorio
-
-```
-onirepo/
-├── docs/
-│   └── index.html          ← Página web del repo (GitHub Pages)
-├── repo/
-│   ├── index.min.json      ← Índice que lee Mihon
-│   └── *.apk               ← Archivos APK de cada extensión
-└── README.md
+```text
+https://Pow2105.github.io/onirepo/repo/index.pb
 ```
 
----
+1. Abre **Mihon → Más → Ajustes → Explorar**.
+2. Entra en **Repositorios/Tiendas de extensiones** y pulsa **＋**.
+3. Pega la URL y confirma.
+4. Vuelve a **Explorar → Extensiones** e instala la fuente que quieras.
 
-## 🚀 Subir a GitHub Pages (paso a paso)
+La página del catálogo está en <https://Pow2105.github.io/onirepo/>. El índice heredado `index.min.json` se mantiene para clientes compatibles, pero las extensiones TachiyomiX 1.6 requieren una versión actual de Mihon.
 
-### 1. Crear el repositorio en GitHub
-- Ve a [github.com/new](https://github.com/new)
-- Nombre: `onirepo`
-- Público ✅
-- Crea el repo
+## Extensiones incluidas
 
-### 2. Subir los archivos
+- Biblio Panda
+- Manga Crab
+- MANGA Plus by SHUEISHA (incluye español)
+- MangaDex (incluye español)
+- MangaOni
+- Mangas No Sekai
+- Mangas.in
+- Manhwa-Latino
+- ManhwaOnline (18+)
+- MHScans
+- Mundo Manhwa (18+)
+- Webtoons.com (incluye español)
+
+Mihon puede ocultar las fuentes marcadas como mixtas o 18+ según la configuración de contenido del dispositivo.
+
+## Estructura
+
+```text
+docs/
+├── index.html                  # página de catálogo de GitHub Pages
+└── repo/
+    ├── repo.json               # metadatos de la tienda
+    ├── index.pb                # índice TachiyomiX actual
+    ├── index.json              # equivalente legible del índice actual
+    ├── index.min.json          # índice heredado
+    ├── checksums.json          # procedencia y SHA-256 de cada APK
+    ├── apk/                    # APK firmados
+    └── icon/                   # iconos del catálogo
+scripts/
+├── sync_repo.py               # sincronización reproducible desde Keiyoushi
+└── validate_repo.py           # validación cruzada de todos los artefactos
+```
+
+## Seguridad y procedencia
+
+- Cada APK se descarga desde una release de Keiyoushi y se compara con el SHA-256 de `release-assets.json` antes de guardarlo.
+- El índice conserva el identificador de la clave de firma de Keiyoushi: `9add655a78e96c4ec7a53ef89dccb557cb5d767489fac5e785d671a5a75d4da2`.
+- `checksums.json` registra para cada paquete el archivo, el hash esperado y la URL exacta de origen.
+- `validate_repo.py` comprueba índices, versiones, URLs, archivos, iconos, hashes y metadatos de firma.
+
+Los APK son software de terceros. El código fuente y sus licencias están en [keiyoushi/extensions-source](https://github.com/keiyoushi/extensions-source). OniRepo no modifica ni vuelve a firmar los binarios.
+
+## Actualizar el catálogo
+
+Con Python 3.10 o posterior:
+
 ```bash
-git clone https://github.com/TU_USUARIO/onirepo.git
-cd onirepo
-# copia aquí los archivos de este proyecto
-git add .
-git commit -m "Initial release"
-git push
+python scripts/sync_repo.py
+python scripts/validate_repo.py
 ```
 
-### 3. Activar GitHub Pages
-- Settings → Pages
-- Source: **Deploy from branch**
-- Branch: `main` / carpeta: `/docs`
-- Guarda
+El flujo `sync.yml` ejecuta esos mismos pasos semanalmente y también puede lanzarse manualmente desde GitHub Actions.
 
-### 4. Actualiza las URLs
-En `docs/index.html` y `repo/index.min.json`, reemplaza `TU_USUARIO` con tu usuario de GitHub.
+## Publicación
 
----
+En **Settings → Pages**, selecciona **Deploy from a branch**, rama `main` y carpeta `/docs`. Después de publicar, comprueba que responden estas dos rutas:
 
-## 📦 Extensiones incluidas
+- `https://Pow2105.github.io/onirepo/repo/index.pb`
+- `https://Pow2105.github.io/onirepo/repo/apk/<archivo>.apk`
 
-| Nombre | Tipo | Versión | Estado |
-|--------|------|---------|--------|
-| AsuraScans | Manhwa | 1.4.0 | ✅ |
-| FlameScans | Manhwa | 1.3.0 | ✅ |
-| ReaperScans | Manhwa | 1.5.0 | ✅ |
-| LuminousScans | Manhwa | 1.2.0 | ✅ |
-| ZinManga | Manhua | 1.0.0 | ✅ |
-| ManhuaFast | Manhua | 1.1.0 | ✅ |
-| Mangatoon | Multi | 1.2.0 | ✅ |
-| Bilibili Comics | Manhua | 1.3.0 | ✅ |
-| MangaDex | Multi | 1.8.0 | ✅ |
-| MangaPlus | Manga | 1.9.0 | ✅ |
-| MangaFire | Manga | 1.6.0 | ✅ |
-| Webtoon | Manhwa | 2.1.0 | ✅ |
+## Aviso
 
----
-
-## ➕ Agregar una nueva extensión
-
-### En `repo/index.min.json`, añade un objeto nuevo:
-
-```json
-{
-  "name": "NombreFuente",
-  "pkg": "eu.kanade.tachiyomi.extension.es.nombrefuente",
-  "apk": "tachiyomi-es.nombrefuente-v1.0.apk",
-  "lang": "es",
-  "code": 10,
-  "version": "1.0.0",
-  "nsfw": 0,
-  "hasReadme": 0,
-  "hasChangelog": 0,
-  "sources": [
-    {
-      "id": "6000000000000099",
-      "lang": "es",
-      "name": "NombreFuente ES",
-      "baseUrl": "https://la-pagina.com",
-      "versionId": 1
-    }
-  ]
-}
-```
-
-> ⚠️ El campo `id` debe ser único. Usa un número de 19 dígitos que no repitas.
-
----
-
-## ⚠️ Aviso
-
-Este repositorio es solo para uso personal y educativo. No estamos afiliados a Mihon, Tachiyomi ni a ninguno de los sitios listados.
-
----
-
-## 🤝 Contribuir
-
-¿Una fuente está rota? ¿Quieres agregar una?
-Abre un [Issue](https://github.com/TU_USUARIO/onirepo/issues) o un Pull Request.
+OniRepo no está afiliado con Mihon, Keiyoushi ni con los sitios incluidos y no aloja mangas. La disponibilidad de cada fuente depende de su web. Para informar de una fuente rota, abre un [issue](https://github.com/Pow2105/onirepo/issues).

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>OniRepo — Extensiones para Mihon</title>
-<meta name="description" content="Repositorio de extensiones para Mihon/Tachiyomi. Manhwa, manhua, manga en español.">
+<meta name="description" content="Repositorio de extensiones verificadas para Mihon 0.20.1 o posterior, con fuentes en español.">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap');
 
@@ -292,7 +292,10 @@ nav {
   font-weight: 700; font-size: .85rem;
   font-family: 'Space Mono', monospace;
   flex-shrink: 0;
+  overflow: hidden;
+  background: #fff;
 }
+.ext-icon img { width: 100%; height: 100%; object-fit: cover; }
 
 .ext-info { flex: 1; min-width: 0; }
 
@@ -424,14 +427,14 @@ footer a { color: var(--accent); text-decoration: none; }
 <section class="hero">
   <div class="hero-badge">// Repositorio de extensiones · Mihon compatible</div>
   <h1>Extensiones para<br><span class="hi">Mihon</span> en español</h1>
-  <p>Manhwa, manhua y manga con fuentes estables, actualizadas y en tu idioma. Agrega la URL en Mihon y listo.</p>
+  <p>APKs reales, firmados y verificados para manga, manhwa y webcómics en español. Agrega la URL en Mihon y listo.</p>
 
   <div class="url-box">
     <span class="url-label">Repo URL</span>
-    <span class="url-text" id="repo-url">https://Pow2105.github.io/onirepo/repo/index.min.json</span>
+    <span class="url-text" id="repo-url">https://Pow2105.github.io/onirepo/repo/index.pb</span>
     <button class="copy-btn" id="copy-btn" onclick="copyUrl()">Copiar</button>
   </div>
-  <p class="url-hint">Pega esta URL en <b>Mihon → Extensiones → Repositorios</b></p>
+  <p class="url-hint">Requiere <b>Mihon 0.20.1 o posterior</b> · Pégala en la tienda/repositorios de extensiones</p>
 </section>
 
 <section class="steps">
@@ -443,11 +446,11 @@ footer a { color: var(--accent); text-decoration: none; }
     </div>
     <div class="step">
       <div class="step-num">2</div>
-      <div class="step-text"><b>Abre Mihon</b>Ve a Más → Configuración → Extensiones.</div>
+      <div class="step-text"><b>Abre Mihon</b>Ve a Más → Ajustes → Explorar.</div>
     </div>
     <div class="step">
       <div class="step-num">3</div>
-      <div class="step-text"><b>Agrega el repo</b>Toca "Repositorios de extensiones" y pega la URL.</div>
+      <div class="step-text"><b>Agrega la tienda</b>En "Repositorios/Tiendas de extensiones", pulsa ＋ y pega la URL.</div>
     </div>
     <div class="step">
       <div class="step-num">4</div>
@@ -459,15 +462,14 @@ footer a { color: var(--accent); text-decoration: none; }
 <section class="ext-section">
   <div class="section-header">
     <h2>// Extensiones disponibles</h2>
-    <span class="ext-count" id="ext-count">12 extensiones</span>
+    <span class="ext-count" id="ext-count">Cargando…</span>
   </div>
 
   <div class="filter-row">
     <button class="ftag on" data-f="all">Todas</button>
-    <button class="ftag" data-f="manhwa">Manhwa</button>
-    <button class="ftag" data-f="manhua">Manhua</button>
-    <button class="ftag" data-f="manga">Manga</button>
-    <button class="ftag" data-f="multi">Multi</button>
+    <button class="ftag" data-f="es">Solo español</button>
+    <button class="ftag" data-f="multi">Multilingües</button>
+    <button class="ftag" data-f="adult">Mixto / 18+</button>
   </div>
 
   <div class="ext-list" id="ext-list"></div>
@@ -476,7 +478,7 @@ footer a { color: var(--accent); text-decoration: none; }
 <section class="contribute">
   <div class="contribute-box">
     <h3>¿Falta una fuente?</h3>
-    <p>Este repositorio es open-source. Si una extensión está rota o quieres agregar una nueva fuente,<br>abre un issue o un pull request en GitHub.</p>
+    <p>Los binarios se sincronizan desde Keiyoushi y conservan su firma original. Si una fuente está rota o quieres proponer otra,<br>abre un issue en GitHub.</p>
     <a class="gh-btn" href="https://github.com/Pow2105/onirepo/issues" target="_blank">
       ＋ Solicitar extensión
     </a>
@@ -484,72 +486,112 @@ footer a { color: var(--accent); text-decoration: none; }
 </section>
 
 <footer>
-  OniRepo · Solo para uso personal · No afiliado a Mihon ni a ningún sitio listado ·
+  OniRepo · Binarios verificados de Keiyoushi · No afiliado a Mihon ni a los sitios listados ·
   <a href="https://mihon.app" target="_blank">mihon.app</a>
 </footer>
 
 <script>
-const EXTENSIONS = [
-  { name:"AsuraScans",      pkg:"es.asurascans",      apk:"tachiyomi-es.asurascans-v1.4.apk",      ver:"1.4.0", type:"manhwa", icon:"AS", color:"#1a0d0d", ic:"#e8494a", status:"up"   },
-  { name:"FlameScans",      pkg:"es.flamescans",      apk:"tachiyomi-es.flamescans-v1.3.apk",      ver:"1.3.0", type:"manhwa", icon:"FS", color:"#1e1600", ic:"#ff8c42", status:"up"   },
-  { name:"ReaperScans",     pkg:"es.reaperscans",     apk:"tachiyomi-es.reaperscans-v1.5.apk",     ver:"1.5.0", type:"manhwa", icon:"RS", color:"#0a1020", ic:"#7c6af7", status:"up"   },
-  { name:"LuminousScans",   pkg:"es.luminousscans",   apk:"tachiyomi-es.luminousscans-v1.2.apk",   ver:"1.2.0", type:"manhwa", icon:"LS", color:"#0d0d1a", ic:"#9b86f7", status:"up"   },
-  { name:"ZinManga",        pkg:"es.zinmanga",        apk:"tachiyomi-es.zinmanga-v1.0.apk",        ver:"1.0.0", type:"manhua", icon:"ZM", color:"#0a180e", ic:"#3dd68c", status:"up"   },
-  { name:"ManhuaFast",      pkg:"es.manhuafast",      apk:"tachiyomi-es.manhuafast-v1.1.apk",      ver:"1.1.0", type:"manhua", icon:"MF", color:"#1a1000", ic:"#f5a623", status:"up"   },
-  { name:"Mangatoon",       pkg:"es.mangatoon",       apk:"tachiyomi-es.mangatoon-v1.2.apk",       ver:"1.2.0", type:"multi",  icon:"MT", color:"#100d1a", ic:"#7c6af7", status:"up"   },
-  { name:"Bilibili Comics", pkg:"es.bilibilicomics",  apk:"tachiyomi-es.bilibilicomics-v1.3.apk",  ver:"1.3.0", type:"manhua", icon:"BB", color:"#0a1018", ic:"#4a8fe8", status:"up"   },
-  { name:"MangaDex",        pkg:"es.mangadex",        apk:"tachiyomi-es.mangadex-v1.8.apk",        ver:"1.8.0", type:"multi",  icon:"MD", color:"#0d0d1a", ic:"#ff652f", status:"up"   },
-  { name:"MangaPlus",       pkg:"es.mangaplus",       apk:"tachiyomi-es.mangaplus-v1.9.apk",       ver:"1.9.0", type:"manga",  icon:"MP", color:"#1a0808", ic:"#e8494a", status:"up"   },
-  { name:"MangaFire",       pkg:"es.mangafire",       apk:"tachiyomi-es.mangafire-v1.6.apk",       ver:"1.6.0", type:"manga",  icon:"MF", color:"#180e00", ic:"#f5a623", status:"up"   },
-  { name:"Webtoon",         pkg:"es.webtoon",         apk:"tachiyomi-es.webtoon-v2.1.apk",         ver:"2.1.0", type:"manhwa", icon:"WT", color:"#081a0e", ic:"#3dd68c", status:"up"   },
-];
+const INDEX_URL = "repo/index.json";
+const CONTENT_LABEL = {
+  CONTENT_WARNING_UNSPECIFIED: "Sin clasificar",
+  CONTENT_WARNING_SAFE: "Apto",
+  CONTENT_WARNING_MIXED: "Mixto",
+  CONTENT_WARNING_NSFW: "18+",
+};
+const CONTENT_CLASS = {
+  CONTENT_WARNING_UNSPECIFIED: "s-slow",
+  CONTENT_WARNING_SAFE: "s-up",
+  CONTENT_WARNING_MIXED: "s-slow",
+  CONTENT_WARNING_NSFW: "s-down",
+};
+let extensions = [];
 
-const TYPE_LABEL = { manhwa:"Manhwa", manhua:"Manhua", manga:"Manga", multi:"Multi" };
-const STATUS_CLASS = { up:"s-up", slow:"s-slow", down:"s-down" };
+function escapeHtml(value) {
+  return String(value).replace(/[&<>"']/g, char => ({
+    "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#039;",
+  })[char]);
+}
+
+function languages(extension) {
+  return [...new Set(extension.sources.map(source => source.language))];
+}
+
+function languageLabel(extension) {
+  const langs = languages(extension);
+  if (langs.length === 1) return langs[0].toUpperCase();
+  return langs.some(lang => lang.startsWith("es")) ? "ES + MULTI" : "MULTI";
+}
+
+function matches(extension, filter) {
+  const langs = languages(extension);
+  if (filter === "es") return langs.length === 1 && langs[0] === "es";
+  if (filter === "multi") return langs.length > 1;
+  if (filter === "adult") return extension.contentWarning === "CONTENT_WARNING_MIXED" || extension.contentWarning === "CONTENT_WARNING_NSFW";
+  return true;
+}
 
 function render(filter = "all") {
   const list = document.getElementById("ext-list");
-  const items = filter === "all" ? EXTENSIONS : EXTENSIONS.filter(e => e.type === filter);
+  const items = extensions.filter(extension => matches(extension, filter));
   document.getElementById("ext-count").textContent = `${items.length} extensiones`;
 
-  list.innerHTML = items.map(e => `
-    <div class="ext-card" data-type="${e.type}">
-      <div class="ext-icon" style="background:${e.color};color:${e.ic}">${e.icon}</div>
-      <div class="ext-info">
-        <div class="ext-name">${e.name}</div>
-        <div class="ext-meta">
-          <span class="ext-pkg">eu.kanade.tachiyomi.extension.${e.pkg}</span>
-          <span class="badge badge-lang">ES</span>
-          <span class="badge badge-ver">v${e.ver}</span>
-          <span class="badge badge-type">${TYPE_LABEL[e.type]}</span>
+  list.innerHTML = items.map(extension => {
+    const warning = extension.contentWarning || "CONTENT_WARNING_UNSPECIFIED";
+    const resources = extension.resources;
+    const iconUrl = `repo/icon/${resources.iconUrl.split("/").pop()}`;
+    const apkUrl = `repo/apk/${resources.apkUrl.split("/").pop()}`;
+    return `
+      <div class="ext-card">
+        <div class="ext-icon"><img src="${escapeHtml(iconUrl)}" alt="" loading="lazy"></div>
+        <div class="ext-info">
+          <div class="ext-name">${escapeHtml(extension.name)}</div>
+          <div class="ext-meta">
+            <span class="ext-pkg">${escapeHtml(extension.packageName)}</span>
+            <span class="badge badge-lang">${escapeHtml(languageLabel(extension))}</span>
+            <span class="badge badge-ver">v${escapeHtml(extension.versionName)}</span>
+            <span class="badge ${warning === "CONTENT_WARNING_NSFW" ? "badge-nsfw" : "badge-type"}">${escapeHtml(CONTENT_LABEL[warning])}</span>
+          </div>
         </div>
-      </div>
-      <div class="ext-status">
-        <div class="status-dot ${STATUS_CLASS[e.status]}"></div>
-        <a class="apk-btn" href="repo/${e.apk}" download>↓ APK</a>
-      </div>
-    </div>
-  `).join('');
+        <div class="ext-status">
+          <div class="status-dot ${CONTENT_CLASS[warning]}"></div>
+          <a class="apk-btn" href="${escapeHtml(apkUrl)}" download>↓ APK</a>
+        </div>
+      </div>`;
+  }).join("");
 }
 
-render();
-
-document.querySelectorAll('.ftag').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.ftag').forEach(b => b.classList.remove('on'));
-    btn.classList.add('on');
-    render(btn.dataset.f);
+document.querySelectorAll(".ftag").forEach(button => {
+  button.addEventListener("click", () => {
+    document.querySelectorAll(".ftag").forEach(item => item.classList.remove("on"));
+    button.classList.add("on");
+    render(button.dataset.f);
   });
 });
 
-function copyUrl() {
-  const url = document.getElementById('repo-url').textContent;
-  navigator.clipboard.writeText(url).then(() => {
-    const btn = document.getElementById('copy-btn');
-    btn.textContent = '✓ Copiado';
-    btn.classList.add('copied');
-    setTimeout(() => { btn.textContent = 'Copiar'; btn.classList.remove('copied'); }, 2000);
+fetch(INDEX_URL)
+  .then(response => {
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    return response.json();
+  })
+  .then(index => {
+    extensions = index.extensionList.extensions;
+    render();
+  })
+  .catch(error => {
+    document.getElementById("ext-count").textContent = "Error";
+    document.getElementById("ext-list").innerHTML = `<div class="ext-card">No se pudo cargar el catálogo: ${escapeHtml(error.message)}</div>`;
   });
+
+async function copyUrl() {
+  const url = document.getElementById("repo-url").textContent;
+  await navigator.clipboard.writeText(url);
+  const button = document.getElementById("copy-btn");
+  button.textContent = "✓ Copiado";
+  button.classList.add("copied");
+  setTimeout(() => {
+    button.textContent = "Copiar";
+    button.classList.remove("copied");
+  }, 2000);
 }
 </script>
 </body>
