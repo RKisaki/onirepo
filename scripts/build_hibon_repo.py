@@ -29,7 +29,7 @@ PACKAGE_SOURCES = {
     "eu.kanade.tachiyomi.extension.es.hibonbl": "extension-src/hibonbl",
     "eu.kanade.tachiyomi.extension.es.qvfamma": "extension-src/qvfamma",
 }
-PUBLIC_BASE_URL = "https://Pow2105.github.io/onirepo/hibon"
+PUBLIC_BASE_URL = "https://RKisaki.github.io/onirepo/hibon"
 EXPECTED_SIGNING_KEY = "0242522b9f2a8bf0998474e7969b4617cb51b408707c2d04f707d2cd2ab0205c"
 STORE_NAME = "OniRepo · Extensiones propias"
 BADGE_LABEL = "ONI"
@@ -111,13 +111,18 @@ def build(args: argparse.Namespace) -> None:
         existing_extensions = [
             item for item in previous_index.extensions if item.package_name != package_name
         ]
+        for item in existing_extensions:
+            item.resources = Resources(
+                apk_url=f"{PUBLIC_BASE_URL}/apk/{item.resources.apk_url.rsplit('/', 1)[-1]}",
+                icon_url=f"{PUBLIC_BASE_URL}/icon/{item.package_name}.png",
+            )
 
     extensions = sorted(existing_extensions + [extension], key=lambda item: item.name.casefold())
     index = Index(
         name=STORE_NAME,
         badge_label=BADGE_LABEL,
         signing_key=signing_key,
-        contact=Contact(website="https://Pow2105.github.io/onirepo/"),
+        contact=Contact(website="https://RKisaki.github.io/onirepo/"),
         extensions=extensions,
     )
 

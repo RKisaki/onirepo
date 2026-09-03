@@ -3,7 +3,7 @@
   "badgeLabel": "ONI",
   "signingKey": "0242522b9f2a8bf0998474e7969b4617cb51b408707c2d04f707d2cd2ab0205c",
   "contact": {
-    "website": "https://Pow2105.github.io/onirepo/"
+    "website": "https://RKisaki.github.io/onirepo/"
   },
   "extensionList": {
     "extensions": [
@@ -11,8 +11,8 @@
         "name": "Hibon BL",
         "packageName": "eu.kanade.tachiyomi.extension.es.hibonbl",
         "resources": {
-          "apkUrl": "https://Pow2105.github.io/onirepo/hibon/apk/tachiyomi-es.hibonbl-v1.6.15.apk",
-          "iconUrl": "https://Pow2105.github.io/onirepo/hibon/icon/eu.kanade.tachiyomi.extension.es.hibonbl.png"
+          "apkUrl": "https://RKisaki.github.io/onirepo/hibon/apk/tachiyomi-es.hibonbl-v1.6.15.apk",
+          "iconUrl": "https://RKisaki.github.io/onirepo/hibon/icon/eu.kanade.tachiyomi.extension.es.hibonbl.png"
         },
         "extensionLib": "1.6",
         "versionCode": "106015",
@@ -31,8 +31,8 @@
         "name": "QV Famma",
         "packageName": "eu.kanade.tachiyomi.extension.es.qvfamma",
         "resources": {
-          "apkUrl": "https://Pow2105.github.io/onirepo/hibon/apk/tachiyomi-es.qvfamma-v1.6.1.apk",
-          "iconUrl": "https://Pow2105.github.io/onirepo/hibon/icon/eu.kanade.tachiyomi.extension.es.qvfamma.png"
+          "apkUrl": "https://RKisaki.github.io/onirepo/hibon/apk/tachiyomi-es.qvfamma-v1.6.1.apk",
+          "iconUrl": "https://RKisaki.github.io/onirepo/hibon/icon/eu.kanade.tachiyomi.extension.es.qvfamma.png"
         },
         "extensionLib": "1.6",
         "versionCode": "106001",

@@ -23,7 +23,7 @@ from typing import Iterator
 UPSTREAM_INDEX_URL = "https://raw.githubusercontent.com/keiyoushi/extensions/repo/index.pb"
 UPSTREAM_ASSETS_URL = "https://raw.githubusercontent.com/keiyoushi/extensions/repo/release-assets.json"
 UPSTREAM_REPO_URL = "https://raw.githubusercontent.com/keiyoushi/extensions/repo/repo.json"
-PUBLIC_BASE_URL = "https://Pow2105.github.io/onirepo/repo"
+PUBLIC_BASE_URL = "https://RKisaki.github.io/onirepo/repo"
 
 # A compact, Spanish-focused selection. Multilingual sources are included only
 # when Spanish is one of the languages exposed by the extension.
@@ -457,7 +457,7 @@ def sync(args: argparse.Namespace) -> None:
         name="OniRepo",
         badge_label="ONI",
         signing_key=upstream_index.signing_key,
-        contact=Contact(website="https://Pow2105.github.io/onirepo/"),
+        contact=Contact(website="https://RKisaki.github.io/onirepo/"),
         extensions=selected,
     )
     (output_dir / "index.pb").write_bytes(encode_index(index))
@@ -479,7 +479,7 @@ def sync(args: argparse.Namespace) -> None:
             "index_v2": f"{PUBLIC_BASE_URL}/index.pb",
             "meta": {
                 "name": "OniRepo",
-                "website": "https://Pow2105.github.io/onirepo/",
+                "website": "https://RKisaki.github.io/onirepo/",
                 "signingKeyFingerprint": upstream_repo["meta"]["signingKeyFingerprint"],
             },
         },

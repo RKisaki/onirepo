@@ -3,7 +3,7 @@
   "badgeLabel": "ONI",
   "signingKey": "9add655a78e96c4ec7a53ef89dccb557cb5d767489fac5e785d671a5a75d4da2",
   "contact": {
-    "website": "https://Pow2105.github.io/onirepo/"
+    "website": "https://RKisaki.github.io/onirepo/"
   },
   "extensionList": {
     "extensions": [
@@ -11,8 +11,8 @@
         "name": "Biblio Panda",
         "packageName": "eu.kanade.tachiyomi.extension.es.bibliopanda",
         "resources": {
-          "apkUrl": "https://Pow2105.github.io/onirepo/repo/apk/tachiyomi-es.bibliopanda-v1.4.55.apk",
-          "iconUrl": "https://Pow2105.github.io/onirepo/repo/icon/eu.kanade.tachiyomi.extension.es.bibliopanda.png"
+          "apkUrl": "https://RKisaki.github.io/onirepo/repo/apk/tachiyomi-es.bibliopanda-v1.4.55.apk",
+          "iconUrl": "https://RKisaki.github.io/onirepo/repo/icon/eu.kanade.tachiyomi.extension.es.bibliopanda.png"
         },
         "extensionLib": "1.4",
         "versionCode": "104055",
@@ -31,8 +31,8 @@
         "name": "Manga Crab",
         "packageName": "eu.kanade.tachiyomi.extension.es.mangacrab",
         "resources": {
-          "apkUrl": "https://Pow2105.github.io/onirepo/repo/apk/tachiyomi-es.mangacrab-v1.4.75.apk",
-          "iconUrl": "https://Pow2105.github.io/onirepo/repo/icon/eu.kanade.tachiyomi.extension.es.mangacrab.png"
+          "apkUrl": "https://RKisaki.github.io/onirepo/repo/apk/tachiyomi-es.mangacrab-v1.4.75.apk",
+          "iconUrl": "https://RKisaki.github.io/onirepo/repo/icon/eu.kanade.tachiyomi.extension.es.mangacrab.png"
         },
         "extensionLib": "1.4",
         "versionCode": "104075",
@@ -51,8 +51,8 @@
         "name": "MANGA Plus by SHUEISHA",
         "packageName": "eu.kanade.tachiyomi.extension.all.mangaplus",
         "resources": {
-          "apkUrl": "https://Pow2105.github.io/onirepo/repo/apk/tachiyomi-all.mangaplus-v1.6.65.apk",
-          "iconUrl": "https://Pow2105.github.io/onirepo/repo/icon/eu.kanade.tachiyomi.extension.all.mangaplus.png"
+          "apkUrl": "https://RKisaki.github.io/onirepo/repo/apk/tachiyomi-all.mangaplus-v1.6.65.apk",
+          "iconUrl": "https://RKisaki.github.io/onirepo/repo/icon/eu.kanade.tachiyomi.extension.all.mangaplus.png"
         },
         "extensionLib": "1.6",
         "versionCode": "106065",
@@ -119,8 +119,8 @@
         "name": "MangaDex",
         "packageName": "eu.kanade.tachiyomi.extension.all.mangadex",
         "resources": {
-          "apkUrl": "https://Pow2105.github.io/onirepo/repo/apk/tachiyomi-all.mangadex-v1.4.212.apk",
-          "iconUrl": "https://Pow2105.github.io/onirepo/repo/icon/eu.kanade.tachiyomi.extension.all.mangadex.png"
+          "apkUrl": "https://RKisaki.github.io/onirepo/repo/apk/tachiyomi-all.mangadex-v1.4.212.apk",
+          "iconUrl": "https://RKisaki.github.io/onirepo/repo/icon/eu.kanade.tachiyomi.extension.all.mangadex.png"
         },
         "extensionLib": "1.4",
         "versionCode": "104212",
@@ -499,8 +499,8 @@
         "name": "MangaOni",
         "packageName": "eu.kanade.tachiyomi.extension.es.mangamx",
         "resources": {
-          "apkUrl": "https://Pow2105.github.io/onirepo/repo/apk/tachiyomi-es.mangamx-v1.4.19.apk",
-          "iconUrl": "https://Pow2105.github.io/onirepo/repo/icon/eu.kanade.tachiyomi.extension.es.mangamx.png"
+          "apkUrl": "https://RKisaki.github.io/onirepo/repo/apk/tachiyomi-es.mangamx-v1.4.19.apk",
+          "iconUrl": "https://RKisaki.github.io/onirepo/repo/icon/eu.kanade.tachiyomi.extension.es.mangamx.png"
         },
         "extensionLib": "1.4",
         "versionCode": "104019",
@@ -519,8 +519,8 @@
         "name": "Mangas No Sekai",
         "packageName": "eu.kanade.tachiyomi.extension.es.mangasnosekai",
         "resources": {
-          "apkUrl": "https://Pow2105.github.io/onirepo/repo/apk/tachiyomi-es.mangasnosekai-v1.4.71.apk",
-          "iconUrl": "https://Pow2105.github.io/onirepo/repo/icon/eu.kanade.tachiyomi.extension.es.mangasnosekai.png"
+          "apkUrl": "https://RKisaki.github.io/onirepo/repo/apk/tachiyomi-es.mangasnosekai-v1.4.71.apk",
+          "iconUrl": "https://RKisaki.github.io/onirepo/repo/icon/eu.kanade.tachiyomi.extension.es.mangasnosekai.png"
         },
         "extensionLib": "1.4",
         "versionCode": "104071",
@@ -539,8 +539,8 @@
         "name": "Mangas.in",
         "packageName": "eu.kanade.tachiyomi.extension.es.mangasin",
         "resources": {
-          "apkUrl": "https://Pow2105.github.io/onirepo/repo/apk/tachiyomi-es.mangasin-v1.4.21.apk",
-          "iconUrl": "https://Pow2105.github.io/onirepo/repo/icon/eu.kanade.tachiyomi.extension.es.mangasin.png"
+          "apkUrl": "https://RKisaki.github.io/onirepo/repo/apk/tachiyomi-es.mangasin-v1.4.21.apk",
+          "iconUrl": "https://RKisaki.github.io/onirepo/repo/icon/eu.kanade.tachiyomi.extension.es.mangasin.png"
         },
         "extensionLib": "1.4",
         "versionCode": "104021",
@@ -559,8 +559,8 @@
         "name": "Manhwa-Latino",
         "packageName": "eu.kanade.tachiyomi.extension.es.manhwalatino",
         "resources": {
-          "apkUrl": "https://Pow2105.github.io/onirepo/repo/apk/tachiyomi-es.manhwalatino-v1.4.63.apk",
-          "iconUrl": "https://Pow2105.github.io/onirepo/repo/icon/eu.kanade.tachiyomi.extension.es.manhwalatino.png"
+          "apkUrl": "https://RKisaki.github.io/onirepo/repo/apk/tachiyomi-es.manhwalatino-v1.4.63.apk",
+          "iconUrl": "https://RKisaki.github.io/onirepo/repo/icon/eu.kanade.tachiyomi.extension.es.manhwalatino.png"
         },
         "extensionLib": "1.4",
         "versionCode": "104063",
@@ -579,8 +579,8 @@
         "name": "ManhwaOnline",
         "packageName": "eu.kanade.tachiyomi.extension.es.manhwaonline",
         "resources": {
-          "apkUrl": "https://Pow2105.github.io/onirepo/repo/apk/tachiyomi-es.manhwaonline-v1.6.56.apk",
-          "iconUrl": "https://Pow2105.github.io/onirepo/repo/icon/eu.kanade.tachiyomi.extension.es.manhwaonline.png"
+          "apkUrl": "https://RKisaki.github.io/onirepo/repo/apk/tachiyomi-es.manhwaonline-v1.6.56.apk",
+          "iconUrl": "https://RKisaki.github.io/onirepo/repo/icon/eu.kanade.tachiyomi.extension.es.manhwaonline.png"
         },
         "extensionLib": "1.6",
         "versionCode": "106056",
@@ -599,8 +599,8 @@
         "name": "MHScans",
         "packageName": "eu.kanade.tachiyomi.extension.es.mhscans",
         "resources": {
-          "apkUrl": "https://Pow2105.github.io/onirepo/repo/apk/tachiyomi-es.mhscans-v1.4.66.apk",
-          "iconUrl": "https://Pow2105.github.io/onirepo/repo/icon/eu.kanade.tachiyomi.extension.es.mhscans.png"
+          "apkUrl": "https://RKisaki.github.io/onirepo/repo/apk/tachiyomi-es.mhscans-v1.4.66.apk",
+          "iconUrl": "https://RKisaki.github.io/onirepo/repo/icon/eu.kanade.tachiyomi.extension.es.mhscans.png"
         },
         "extensionLib": "1.4",
         "versionCode": "104066",
@@ -619,8 +619,8 @@
         "name": "Mundo Manhwa",
         "packageName": "eu.kanade.tachiyomi.extension.es.mundomanhwa",
         "resources": {
-          "apkUrl": "https://Pow2105.github.io/onirepo/repo/apk/tachiyomi-es.mundomanhwa-v1.6.54.apk",
-          "iconUrl": "https://Pow2105.github.io/onirepo/repo/icon/eu.kanade.tachiyomi.extension.es.mundomanhwa.png"
+          "apkUrl": "https://RKisaki.github.io/onirepo/repo/apk/tachiyomi-es.mundomanhwa-v1.6.54.apk",
+          "iconUrl": "https://RKisaki.github.io/onirepo/repo/icon/eu.kanade.tachiyomi.extension.es.mundomanhwa.png"
         },
         "extensionLib": "1.6",
         "versionCode": "106054",
@@ -639,8 +639,8 @@
         "name": "Webtoons.com",
         "packageName": "eu.kanade.tachiyomi.extension.all.webtoons",
         "resources": {
-          "apkUrl": "https://Pow2105.github.io/onirepo/repo/apk/tachiyomi-all.webtoons-v1.4.57.apk",
-          "iconUrl": "https://Pow2105.github.io/onirepo/repo/icon/eu.kanade.tachiyomi.extension.all.webtoons.png"
+          "apkUrl": "https://RKisaki.github.io/onirepo/repo/apk/tachiyomi-all.webtoons-v1.4.57.apk",
+          "iconUrl": "https://RKisaki.github.io/onirepo/repo/icon/eu.kanade.tachiyomi.extension.all.webtoons.png"
         },
         "extensionLib": "1.4",
         "versionCode": "104057",

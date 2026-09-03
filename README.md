@@ -7,8 +7,8 @@ Repositorio compacto de extensiones para **Mihon 0.20.1 o posterior**. El catál
 Agrega las dos tiendas para ver todo el catálogo:
 
 ```text
-https://Pow2105.github.io/onirepo/repo/index.pb
-https://Pow2105.github.io/onirepo/hibon/index.pb
+https://RKisaki.github.io/onirepo/repo/index.pb
+https://RKisaki.github.io/onirepo/hibon/index.pb
 ```
 
 1. Abre **Mihon → Más → Ajustes → Explorar**.
@@ -16,7 +16,7 @@ https://Pow2105.github.io/onirepo/hibon/index.pb
 3. Pega una URL y confirma; repite el proceso con la segunda.
 4. Vuelve a **Explorar → Extensiones** e instala la fuente que quieras.
 
-La página del catálogo está en <https://Pow2105.github.io/onirepo/>. Los índices heredados `index.min.json` se mantienen para clientes compatibles, pero las extensiones TachiyomiX 1.6 requieren una versión actual de Mihon.
+La página del catálogo está en <https://RKisaki.github.io/onirepo/>. Los índices heredados `index.min.json` se mantienen para clientes compatibles, pero las extensiones TachiyomiX 1.6 requieren una versión actual de Mihon.
 
 ## Hibon BL
 
@@ -26,7 +26,7 @@ La página del catálogo está en <https://Pow2105.github.io/onirepo/>. Los índ
 - Contenido: manga en español; las novelas de texto se excluyen del catálogo.
 - Certificado de firma SHA-256: `0242522b9f2a8bf0998474e7969b4617cb51b408707c2d04f707d2cd2ab0205c`
 
-La extensión usa los feeds públicos de Blogger para buscar series y capítulos, y extrae las páginas del lector estático. Está marcada como 18+ porque el sitio contiene material adulto. También puedes [descargar el APK directamente](https://Pow2105.github.io/onirepo/hibon/apk/tachiyomi-es.hibonbl-v1.6.15.apk).
+La extensión usa los feeds públicos de Blogger para buscar series y capítulos, y extrae las páginas del lector estático. Está marcada como 18+ porque el sitio contiene material adulto. También puedes [descargar el APK directamente](https://RKisaki.github.io/onirepo/hibon/apk/tachiyomi-es.hibonbl-v1.6.15.apk).
 
 ## QV Famma
 
@@ -36,7 +36,7 @@ La extensión usa los feeds públicos de Blogger para buscar series y capítulos
 - Catálogo detectado: 98 fichas de manga en español.
 - Certificado de firma SHA-256: `0242522b9f2a8bf0998474e7969b4617cb51b408707c2d04f707d2cd2ab0205c`
 
-QV Famma usa los feeds públicos de Blogger para el catálogo, los capítulos y las páginas. Esto permite leer desde Mihon aunque la versión web muestre una advertencia de contenido sensible que exige iniciar sesión. Está marcada como 18+. También puedes [descargar el APK directamente](https://Pow2105.github.io/onirepo/hibon/apk/tachiyomi-es.qvfamma-v1.6.1.apk).
+QV Famma usa los feeds públicos de Blogger para el catálogo, los capítulos y las páginas. Esto permite leer desde Mihon aunque la versión web muestre una advertencia de contenido sensible que exige iniciar sesión. Está marcada como 18+. También puedes [descargar el APK directamente](https://RKisaki.github.io/onirepo/hibon/apk/tachiyomi-es.qvfamma-v1.6.1.apk).
 
 ## Extensiones incluidas
 
@@ -111,12 +111,12 @@ El flujo `sync.yml` actualiza semanalmente el catálogo general y valida tambié
 
 En **Settings → Pages**, selecciona **Deploy from a branch**, rama `main` y carpeta `/docs`. Después de publicar, comprueba estas rutas:
 
-- `https://Pow2105.github.io/onirepo/repo/index.pb`
-- `https://Pow2105.github.io/onirepo/repo/apk/<archivo>.apk`
-- `https://Pow2105.github.io/onirepo/hibon/index.pb`
-- `https://Pow2105.github.io/onirepo/hibon/apk/tachiyomi-es.hibonbl-v1.6.15.apk`
-- `https://Pow2105.github.io/onirepo/hibon/apk/tachiyomi-es.qvfamma-v1.6.1.apk`
+- `https://RKisaki.github.io/onirepo/repo/index.pb`
+- `https://RKisaki.github.io/onirepo/repo/apk/<archivo>.apk`
+- `https://RKisaki.github.io/onirepo/hibon/index.pb`
+- `https://RKisaki.github.io/onirepo/hibon/apk/tachiyomi-es.hibonbl-v1.6.15.apk`
+- `https://RKisaki.github.io/onirepo/hibon/apk/tachiyomi-es.qvfamma-v1.6.1.apk`
 
 ## Aviso
 
-OniRepo no está afiliado con Mihon, Keiyoushi ni con los sitios incluidos y no aloja mangas. La disponibilidad de cada fuente depende de su web. Para informar de una fuente rota, abre un [issue](https://github.com/Pow2105/onirepo/issues).
+OniRepo no está afiliado con Mihon, Keiyoushi ni con los sitios incluidos y no aloja mangas. La disponibilidad de cada fuente depende de su web. Para informar de una fuente rota, abre un [issue](https://github.com/RKisaki/onirepo/issues).
