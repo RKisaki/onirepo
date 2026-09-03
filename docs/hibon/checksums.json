@@ -1,7 +1,7 @@
 {
   "eu.kanade.tachiyomi.extension.es.hibonbl": {
-    "apk": "tachiyomi-es.hibonbl-v1.6.16.apk",
-    "sha256": "6ca4a9130ece87ddbedea334e44637e7fcaf6a0bade241e371c15978e2fa6931",
+    "apk": "tachiyomi-es.hibonbl-v1.6.17.apk",
+    "sha256": "e303cab6f245037134d72398a8ac9b1d3a1c425c438bb2a2974a8df193685267",
     "certificateSha256": "0242522b9f2a8bf0998474e7969b4617cb51b408707c2d04f707d2cd2ab0205c",
     "source": "extension-src/hibonbl",
     "upstreamBase": "keiyoushi/extensions-source@2063590a39622a68075a4cb8834edec8b11d0986"

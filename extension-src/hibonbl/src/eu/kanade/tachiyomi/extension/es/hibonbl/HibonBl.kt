@@ -100,6 +100,10 @@ abstract class HibonBl : KeiSource() {
         val document = Jsoup.parseBodyFragment(entry.content?.value.orEmpty(), baseUrl)
         val images = document.select("#imagenes img[src]").ifEmpty {
             document.select("#capitulo-one-shot img[src], .manga-box img[src], div.separator img[src]")
+        }.ifEmpty {
+            document.select("img[src]").filterNot { image ->
+                image.attr("style").replace(" ", "").contains("display:none", ignoreCase = true)
+            }
         }
 
         return images

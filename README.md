@@ -20,13 +20,13 @@ La página del catálogo está en <https://RKisaki.github.io/onirepo/>. Los índ
 
 ## Hibon BL
 
-- APK: `tachiyomi-es.hibonbl-v1.6.16.apk`
+- APK: `tachiyomi-es.hibonbl-v1.6.17.apk`
 - Paquete: `eu.kanade.tachiyomi.extension.es.hibonbl`
 - Fuente: <https://hibon-bl.blogspot.com/>
 - Contenido: manga en español; las novelas de texto se excluyen del catálogo.
 - Certificado de firma SHA-256: `0242522b9f2a8bf0998474e7969b4617cb51b408707c2d04f707d2cd2ab0205c`
 
-La extensión usa los feeds públicos de Blogger para buscar series y capítulos, y extrae las páginas del lector estático. La versión 1.6.16 deja de depender del cargador JavaScript irregular de la web para que Mihon pueda mostrar los capítulos. Está marcada como 18+ porque el sitio contiene material adulto. También puedes [descargar el APK directamente](https://RKisaki.github.io/onirepo/hibon/apk/tachiyomi-es.hibonbl-v1.6.16.apk).
+La extensión usa los feeds públicos de Blogger para buscar series y capítulos, y extrae las páginas del lector estático. La versión 1.6.17 admite tanto la estructura moderna como los capítulos antiguos cuyas imágenes no tienen un contenedor específico. Está marcada como 18+ porque el sitio contiene material adulto. También puedes [descargar el APK directamente](https://RKisaki.github.io/onirepo/hibon/apk/tachiyomi-es.hibonbl-v1.6.17.apk).
 
 ## QV Famma
 
@@ -114,7 +114,7 @@ En **Settings → Pages**, selecciona **Deploy from a branch**, rama `main` y ca
 - `https://RKisaki.github.io/onirepo/repo/index.pb`
 - `https://RKisaki.github.io/onirepo/repo/apk/<archivo>.apk`
 - `https://RKisaki.github.io/onirepo/hibon/index.pb`
-- `https://RKisaki.github.io/onirepo/hibon/apk/tachiyomi-es.hibonbl-v1.6.16.apk`
+- `https://RKisaki.github.io/onirepo/hibon/apk/tachiyomi-es.hibonbl-v1.6.17.apk`
 - `https://RKisaki.github.io/onirepo/hibon/apk/tachiyomi-es.qvfamma-v1.6.1.apk`
 
 ## Aviso

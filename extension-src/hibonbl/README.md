@@ -3,7 +3,8 @@
 This directory contains the site-specific module used to build the Hibon BL
 Mihon extension. It uses Hibon's public Blogger feeds for the catalogue,
 chapters, and reader pages so it does not depend on the site's client-side
-chapter loader.
+chapter loader. Older posts with unwrapped page images are supported through a
+fallback that ignores hidden cover images.
 
 ## Rebuild
 

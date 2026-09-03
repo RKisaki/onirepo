@@ -11,12 +11,12 @@
         "name": "Hibon BL",
         "packageName": "eu.kanade.tachiyomi.extension.es.hibonbl",
         "resources": {
-          "apkUrl": "https://RKisaki.github.io/onirepo/hibon/apk/tachiyomi-es.hibonbl-v1.6.16.apk",
+          "apkUrl": "https://RKisaki.github.io/onirepo/hibon/apk/tachiyomi-es.hibonbl-v1.6.17.apk",
           "iconUrl": "https://RKisaki.github.io/onirepo/hibon/icon/eu.kanade.tachiyomi.extension.es.hibonbl.png"
         },
         "extensionLib": "1.6",
-        "versionCode": "106016",
-        "versionName": "1.6.16",
+        "versionCode": "106017",
+        "versionName": "1.6.17",
         "contentWarning": "CONTENT_WARNING_NSFW",
         "sources": [
           {
