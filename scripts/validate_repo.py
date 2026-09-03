@@ -9,6 +9,7 @@ import sys
 from pathlib import Path
 
 from sync_repo import PUBLIC_BASE_URL, SELECTED_PACKAGES, parse_index
+from validate_hibon_repo import validate as validate_hibon_repo
 
 
 def load_json(path: Path):
@@ -111,7 +112,9 @@ def validate(root: Path) -> None:
 
 if __name__ == "__main__":
     try:
-        validate(Path(__file__).resolve().parents[1])
+        repository_root = Path(__file__).resolve().parents[1]
+        validate(repository_root)
+        validate_hibon_repo(repository_root)
     except Exception as exc:
         print(f"error: {exc}", file=sys.stderr)
         raise

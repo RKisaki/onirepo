@@ -1,21 +1,32 @@
 # 🔱 OniRepo — extensiones en español para Mihon
 
-Repositorio compacto de extensiones para **Mihon 0.20.1 o posterior**. Los APK se espejan desde [Keiyoushi](https://github.com/keiyoushi/extensions), conservan su firma original y se publican únicamente cuando su SHA-256 coincide con el manifiesto del distribuidor.
+Repositorio compacto de extensiones para **Mihon 0.20.1 o posterior**. El catálogo general espeja APK de [Keiyoushi](https://github.com/keiyoushi/extensions) sin modificar su firma. Hibon BL se compila como extensión propia, con código fuente y firma independientes.
 
 ## Añadir a Mihon
 
-Usa esta URL:
+Agrega las dos tiendas para ver todo el catálogo:
 
 ```text
 https://Pow2105.github.io/onirepo/repo/index.pb
+https://Pow2105.github.io/onirepo/hibon/index.pb
 ```
 
 1. Abre **Mihon → Más → Ajustes → Explorar**.
 2. Entra en **Repositorios/Tiendas de extensiones** y pulsa **＋**.
-3. Pega la URL y confirma.
+3. Pega una URL y confirma; repite el proceso con la segunda.
 4. Vuelve a **Explorar → Extensiones** e instala la fuente que quieras.
 
-La página del catálogo está en <https://Pow2105.github.io/onirepo/>. El índice heredado `index.min.json` se mantiene para clientes compatibles, pero las extensiones TachiyomiX 1.6 requieren una versión actual de Mihon.
+La página del catálogo está en <https://Pow2105.github.io/onirepo/>. Los índices heredados `index.min.json` se mantienen para clientes compatibles, pero las extensiones TachiyomiX 1.6 requieren una versión actual de Mihon.
+
+## Hibon BL
+
+- APK: `tachiyomi-es.hibonbl-v1.6.15.apk`
+- Paquete: `eu.kanade.tachiyomi.extension.es.hibonbl`
+- Fuente: <https://hibon-bl.blogspot.com/>
+- Contenido: manga en español; las novelas de texto se excluyen del catálogo.
+- Certificado de firma SHA-256: `0242522b9f2a8bf0998474e7969b4617cb51b408707c2d04f707d2cd2ab0205c`
+
+La extensión usa los feeds públicos de Blogger para buscar series y capítulos, y extrae las páginas del lector estático. Está marcada como 18+ porque el sitio contiene material adulto. También puedes [descargar el APK directamente](https://Pow2105.github.io/onirepo/hibon/apk/tachiyomi-es.hibonbl-v1.6.15.apk).
 
 ## Extensiones incluidas
 
@@ -39,17 +50,27 @@ Mihon puede ocultar las fuentes marcadas como mixtas o 18+ según la configuraci
 ```text
 docs/
 ├── index.html                  # página de catálogo de GitHub Pages
-└── repo/
-    ├── repo.json               # metadatos de la tienda
-    ├── index.pb                # índice TachiyomiX actual
-    ├── index.json              # equivalente legible del índice actual
+├── repo/
+│   ├── repo.json               # metadatos de la tienda
+│   ├── index.pb                # índice TachiyomiX actual
+│   ├── index.json              # equivalente legible del índice actual
+│   ├── index.min.json          # índice heredado
+│   ├── checksums.json          # procedencia y SHA-256 de cada APK
+│   ├── apk/                    # APK firmados
+│   └── icon/                   # iconos del catálogo
+└── hibon/                      # tienda separada para Hibon BL
+    ├── index.pb, index.json    # índice TachiyomiX y copia legible
     ├── index.min.json          # índice heredado
-    ├── checksums.json          # procedencia y SHA-256 de cada APK
-    ├── apk/                    # APK firmados
-    └── icon/                   # iconos del catálogo
+    ├── checksums.json          # hash y procedencia de la compilación
+    ├── apk/                    # APK de Hibon BL
+    └── icon/                   # icono de la extensión
+extension-src/hibonbl/          # módulo reproducible de la extensión
 scripts/
 ├── sync_repo.py               # sincronización reproducible desde Keiyoushi
-└── validate_repo.py           # validación cruzada de todos los artefactos
+├── build_hibon_repo.py        # genera el índice Hibon desde una compilación
+├── apk_signature.py           # lee el certificado v2 del APK
+├── validate_hibon_repo.py     # valida la tienda y firma Hibon
+└── validate_repo.py           # validación cruzada de ambas tiendas
 ```
 
 ## Seguridad y procedencia
@@ -58,8 +79,10 @@ scripts/
 - El índice conserva el identificador de la clave de firma de Keiyoushi: `9add655a78e96c4ec7a53ef89dccb557cb5d767489fac5e785d671a5a75d4da2`.
 - `checksums.json` registra para cada paquete el archivo, el hash esperado y la URL exacta de origen.
 - `validate_repo.py` comprueba índices, versiones, URLs, archivos, iconos, hashes y metadatos de firma.
+- Hibon BL usa una tienda separada porque un índice TachiyomiX admite una única clave de firma. Su validador extrae el certificado v2 del APK y exige que coincida con la huella del índice.
+- La compilación actual de Hibon BL está firmada con la clave Android local de desarrollo. No es la firma de Keiyoushi; las actualizaciones deben conservar exactamente esa clave o Mihon las rechazará.
 
-Los APK son software de terceros. El código fuente y sus licencias están en [keiyoushi/extensions-source](https://github.com/keiyoushi/extensions-source). OniRepo no modifica ni vuelve a firmar los binarios.
+Los APK del catálogo general son software de terceros. El código fuente y sus licencias están en [keiyoushi/extensions-source](https://github.com/keiyoushi/extensions-source). OniRepo no modifica ni vuelve a firmar esos binarios. El módulo específico de Hibon BL está en `extension-src/hibonbl` y hereda el tema `zeistmanga` del mismo proyecto.
 
 ## Actualizar el catálogo
 
@@ -70,14 +93,16 @@ python scripts/sync_repo.py
 python scripts/validate_repo.py
 ```
 
-El flujo `sync.yml` ejecuta esos mismos pasos semanalmente y también puede lanzarse manualmente desde GitHub Actions.
+El flujo `sync.yml` actualiza semanalmente el catálogo general y valida también Hibon BL. Para recompilar Hibon, sigue [extension-src/hibonbl/README.md](extension-src/hibonbl/README.md) y ejecuta `build_hibon_repo.py` con el APK, el icono y `keiyoushi-source-info.json` generados.
 
 ## Publicación
 
-En **Settings → Pages**, selecciona **Deploy from a branch**, rama `main` y carpeta `/docs`. Después de publicar, comprueba que responden estas dos rutas:
+En **Settings → Pages**, selecciona **Deploy from a branch**, rama `main` y carpeta `/docs`. Después de publicar, comprueba estas rutas:
 
 - `https://Pow2105.github.io/onirepo/repo/index.pb`
 - `https://Pow2105.github.io/onirepo/repo/apk/<archivo>.apk`
+- `https://Pow2105.github.io/onirepo/hibon/index.pb`
+- `https://Pow2105.github.io/onirepo/hibon/apk/tachiyomi-es.hibonbl-v1.6.15.apk`
 
 ## Aviso
 

@@ -427,14 +427,19 @@ footer a { color: var(--accent); text-decoration: none; }
 <section class="hero">
   <div class="hero-badge">// Repositorio de extensiones · Mihon compatible</div>
   <h1>Extensiones para<br><span class="hi">Mihon</span> en español</h1>
-  <p>APKs reales, firmados y verificados para manga, manhwa y webcómics en español. Agrega la URL en Mihon y listo.</p>
+  <p>APKs reales, firmados y verificados para manga, manhwa y webcómics en español. Incluye una extensión propia para Hibon BL.</p>
 
   <div class="url-box">
-    <span class="url-label">Repo URL</span>
+    <span class="url-label">Repo general</span>
     <span class="url-text" id="repo-url">https://Pow2105.github.io/onirepo/repo/index.pb</span>
-    <button class="copy-btn" id="copy-btn" onclick="copyUrl()">Copiar</button>
+    <button class="copy-btn" id="copy-btn" onclick="copyUrl('repo-url', 'copy-btn')">Copiar</button>
   </div>
-  <p class="url-hint">Requiere <b>Mihon 0.20.1 o posterior</b> · Pégala en la tienda/repositorios de extensiones</p>
+  <div class="url-box">
+    <span class="url-label">Hibon BL</span>
+    <span class="url-text" id="hibon-repo-url">https://Pow2105.github.io/onirepo/hibon/index.pb</span>
+    <button class="copy-btn" id="copy-hibon-btn" onclick="copyUrl('hibon-repo-url', 'copy-hibon-btn')">Copiar</button>
+  </div>
+  <p class="url-hint">Requiere <b>Mihon 0.20.1 o posterior</b> · Agrega las dos URLs para ver todo el catálogo</p>
 </section>
 
 <section class="steps">
@@ -478,7 +483,7 @@ footer a { color: var(--accent); text-decoration: none; }
 <section class="contribute">
   <div class="contribute-box">
     <h3>¿Falta una fuente?</h3>
-    <p>Los binarios se sincronizan desde Keiyoushi y conservan su firma original. Si una fuente está rota o quieres proponer otra,<br>abre un issue en GitHub.</p>
+    <p>El catálogo general conserva los binarios y la firma de Keiyoushi. Hibon BL se compila desde el código incluido en OniRepo y usa una firma separada.<br>Si una fuente está rota o quieres proponer otra, abre un issue en GitHub.</p>
     <a class="gh-btn" href="https://github.com/Pow2105/onirepo/issues" target="_blank">
       ＋ Solicitar extensión
     </a>
@@ -486,12 +491,15 @@ footer a { color: var(--accent); text-decoration: none; }
 </section>
 
 <footer>
-  OniRepo · Binarios verificados de Keiyoushi · No afiliado a Mihon ni a los sitios listados ·
+  OniRepo · APKs e índices verificados · No afiliado a Mihon ni a los sitios listados ·
   <a href="https://mihon.app" target="_blank">mihon.app</a>
 </footer>
 
 <script>
-const INDEX_URL = "repo/index.json";
+const INDEXES = [
+  { url: "repo/index.json", basePath: "repo" },
+  { url: "hibon/index.json", basePath: "hibon" },
+];
 const CONTENT_LABEL = {
   CONTENT_WARNING_UNSPECIFIED: "Sin clasificar",
   CONTENT_WARNING_SAFE: "Apto",
@@ -538,8 +546,8 @@ function render(filter = "all") {
   list.innerHTML = items.map(extension => {
     const warning = extension.contentWarning || "CONTENT_WARNING_UNSPECIFIED";
     const resources = extension.resources;
-    const iconUrl = `repo/icon/${resources.iconUrl.split("/").pop()}`;
-    const apkUrl = `repo/apk/${resources.apkUrl.split("/").pop()}`;
+    const iconUrl = `${extension.basePath}/icon/${resources.iconUrl.split("/").pop()}`;
+    const apkUrl = `${extension.basePath}/apk/${resources.apkUrl.split("/").pop()}`;
     return `
       <div class="ext-card">
         <div class="ext-icon"><img src="${escapeHtml(iconUrl)}" alt="" loading="lazy"></div>
@@ -568,13 +576,17 @@ document.querySelectorAll(".ftag").forEach(button => {
   });
 });
 
-fetch(INDEX_URL)
-  .then(response => {
-    if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    return response.json();
-  })
-  .then(index => {
-    extensions = index.extensionList.extensions;
+Promise.all(INDEXES.map(async repository => {
+  const response = await fetch(repository.url);
+  if (!response.ok) throw new Error(`${repository.url}: HTTP ${response.status}`);
+  const index = await response.json();
+  return index.extensionList.extensions.map(extension => ({
+    ...extension,
+    basePath: repository.basePath,
+  }));
+}))
+  .then(catalogs => {
+    extensions = catalogs.flat().sort((a, b) => a.name.localeCompare(b.name));
     render();
   })
   .catch(error => {
@@ -582,10 +594,10 @@ fetch(INDEX_URL)
     document.getElementById("ext-list").innerHTML = `<div class="ext-card">No se pudo cargar el catálogo: ${escapeHtml(error.message)}</div>`;
   });
 
-async function copyUrl() {
-  const url = document.getElementById("repo-url").textContent;
+async function copyUrl(textId, buttonId) {
+  const url = document.getElementById(textId).textContent;
   await navigator.clipboard.writeText(url);
-  const button = document.getElementById("copy-btn");
+  const button = document.getElementById(buttonId);
   button.textContent = "✓ Copiado";
   button.classList.add("copied");
   setTimeout(() => {

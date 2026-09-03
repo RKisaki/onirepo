@@ -1,0 +1,32 @@
+{
+  "name": "OniRepo · Hibon BL",
+  "badgeLabel": "HIBON",
+  "signingKey": "0242522b9f2a8bf0998474e7969b4617cb51b408707c2d04f707d2cd2ab0205c",
+  "contact": {
+    "website": "https://Pow2105.github.io/onirepo/"
+  },
+  "extensionList": {
+    "extensions": [
+      {
+        "name": "Hibon BL",
+        "packageName": "eu.kanade.tachiyomi.extension.es.hibonbl",
+        "resources": {
+          "apkUrl": "https://Pow2105.github.io/onirepo/hibon/apk/tachiyomi-es.hibonbl-v1.6.15.apk",
+          "iconUrl": "https://Pow2105.github.io/onirepo/hibon/icon/eu.kanade.tachiyomi.extension.es.hibonbl.png"
+        },
+        "extensionLib": "1.6",
+        "versionCode": "106015",
+        "versionName": "1.6.15",
+        "contentWarning": "CONTENT_WARNING_NSFW",
+        "sources": [
+          {
+            "id": "6869509817164146426",
+            "name": "Hibon BL",
+            "language": "es",
+            "homeUrl": "https://hibon-bl.blogspot.com"
+          }
+        ]
+      }
+    ]
+  }
+}
