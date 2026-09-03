@@ -20,13 +20,13 @@ La página del catálogo está en <https://RKisaki.github.io/onirepo/>. Los índ
 
 ## Hibon BL
 
-- APK: `tachiyomi-es.hibonbl-v1.6.15.apk`
+- APK: `tachiyomi-es.hibonbl-v1.6.16.apk`
 - Paquete: `eu.kanade.tachiyomi.extension.es.hibonbl`
 - Fuente: <https://hibon-bl.blogspot.com/>
 - Contenido: manga en español; las novelas de texto se excluyen del catálogo.
 - Certificado de firma SHA-256: `0242522b9f2a8bf0998474e7969b4617cb51b408707c2d04f707d2cd2ab0205c`
 
-La extensión usa los feeds públicos de Blogger para buscar series y capítulos, y extrae las páginas del lector estático. Está marcada como 18+ porque el sitio contiene material adulto. También puedes [descargar el APK directamente](https://RKisaki.github.io/onirepo/hibon/apk/tachiyomi-es.hibonbl-v1.6.15.apk).
+La extensión usa los feeds públicos de Blogger para buscar series y capítulos, y extrae las páginas del lector estático. La versión 1.6.16 deja de depender del cargador JavaScript irregular de la web para que Mihon pueda mostrar los capítulos. Está marcada como 18+ porque el sitio contiene material adulto. También puedes [descargar el APK directamente](https://RKisaki.github.io/onirepo/hibon/apk/tachiyomi-es.hibonbl-v1.6.16.apk).
 
 ## QV Famma
 
@@ -94,7 +94,7 @@ scripts/
 - Las extensiones propias usan una tienda separada porque un índice TachiyomiX admite una única clave de firma. Su validador extrae el certificado v2 de cada APK y exige que coincida con la huella del índice.
 - Las compilaciones actuales de Hibon BL y QV Famma están firmadas con la misma clave Android local de desarrollo. No es la firma de Keiyoushi; las actualizaciones deben conservar exactamente esa clave o Mihon las rechazará.
 
-Los APK del catálogo general son software de terceros. El código fuente y sus licencias están en [keiyoushi/extensions-source](https://github.com/keiyoushi/extensions-source). OniRepo no modifica ni vuelve a firmar esos binarios. Los módulos propios están en `extension-src/`; Hibon BL hereda el tema `zeistmanga` y QV Famma implementa directamente los feeds de Blogger.
+Los APK del catálogo general son software de terceros. El código fuente y sus licencias están en [keiyoushi/extensions-source](https://github.com/keiyoushi/extensions-source). OniRepo no modifica ni vuelve a firmar esos binarios. Los módulos propios están en `extension-src/`; Hibon BL y QV Famma implementan directamente los feeds de Blogger.
 
 ## Actualizar el catálogo
 
@@ -114,7 +114,7 @@ En **Settings → Pages**, selecciona **Deploy from a branch**, rama `main` y ca
 - `https://RKisaki.github.io/onirepo/repo/index.pb`
 - `https://RKisaki.github.io/onirepo/repo/apk/<archivo>.apk`
 - `https://RKisaki.github.io/onirepo/hibon/index.pb`
-- `https://RKisaki.github.io/onirepo/hibon/apk/tachiyomi-es.hibonbl-v1.6.15.apk`
+- `https://RKisaki.github.io/onirepo/hibon/apk/tachiyomi-es.hibonbl-v1.6.16.apk`
 - `https://RKisaki.github.io/onirepo/hibon/apk/tachiyomi-es.qvfamma-v1.6.1.apk`
 
 ## Aviso

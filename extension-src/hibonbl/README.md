@@ -1,8 +1,9 @@
 # Hibon BL extension source
 
 This directory contains the site-specific module used to build the Hibon BL
-Mihon extension. It targets the current `zeistmanga` multisrc implementation
-from `keiyoushi/extensions-source`.
+Mihon extension. It uses Hibon's public Blogger feeds for the catalogue,
+chapters, and reader pages so it does not depend on the site's client-side
+chapter loader.
 
 ## Rebuild
 
@@ -12,7 +13,7 @@ from `keiyoushi/extensions-source`.
 4. Run `scripts/build_hibon_repo.py` in OniRepo with the generated APK,
    icon, and `keiyoushi-source-info.json`.
 
-The published `1.6.15` APK was built against commit
+The published APK was built against commit
 `2063590a39622a68075a4cb8834edec8b11d0986` of the upstream source tree.
 The current APK uses the local Android debug signing key. Keep that exact key
 for every update (or migrate deliberately before publishing), otherwise Mihon
