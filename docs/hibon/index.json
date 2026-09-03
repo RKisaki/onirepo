@@ -1,6 +1,6 @@
 {
-  "name": "OniRepo · Hibon BL",
-  "badgeLabel": "HIBON",
+  "name": "OniRepo · Extensiones propias",
+  "badgeLabel": "ONI",
   "signingKey": "0242522b9f2a8bf0998474e7969b4617cb51b408707c2d04f707d2cd2ab0205c",
   "contact": {
     "website": "https://Pow2105.github.io/onirepo/"
@@ -24,6 +24,26 @@
             "name": "Hibon BL",
             "language": "es",
             "homeUrl": "https://hibon-bl.blogspot.com"
+          }
+        ]
+      },
+      {
+        "name": "QV Famma",
+        "packageName": "eu.kanade.tachiyomi.extension.es.qvfamma",
+        "resources": {
+          "apkUrl": "https://Pow2105.github.io/onirepo/hibon/apk/tachiyomi-es.qvfamma-v1.6.1.apk",
+          "iconUrl": "https://Pow2105.github.io/onirepo/hibon/icon/eu.kanade.tachiyomi.extension.es.qvfamma.png"
+        },
+        "extensionLib": "1.6",
+        "versionCode": "106001",
+        "versionName": "1.6.1",
+        "contentWarning": "CONTENT_WARNING_NSFW",
+        "sources": [
+          {
+            "id": "1607788530008843736",
+            "name": "QV Famma",
+            "language": "es",
+            "homeUrl": "https://qvfammaonline.blogspot.com"
           }
         ]
       }

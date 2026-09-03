@@ -5,5 +5,12 @@
     "certificateSha256": "0242522b9f2a8bf0998474e7969b4617cb51b408707c2d04f707d2cd2ab0205c",
     "source": "extension-src/hibonbl",
     "upstreamBase": "keiyoushi/extensions-source@2063590a39622a68075a4cb8834edec8b11d0986"
+  },
+  "eu.kanade.tachiyomi.extension.es.qvfamma": {
+    "apk": "tachiyomi-es.qvfamma-v1.6.1.apk",
+    "sha256": "115d5a1f840804a624ce4235bc2001d7cfbc7ee1e8b86850d918817d0781baf7",
+    "certificateSha256": "0242522b9f2a8bf0998474e7969b4617cb51b408707c2d04f707d2cd2ab0205c",
+    "source": "extension-src/qvfamma",
+    "upstreamBase": "keiyoushi/extensions-source@2063590a39622a68075a4cb8834edec8b11d0986"
   }
 }
