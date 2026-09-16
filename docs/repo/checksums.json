@@ -1,13 +1,13 @@
 {
   "eu.kanade.tachiyomi.extension.all.mangadex": {
-    "apk": "tachiyomi-all.mangadex-v1.4.212.apk",
-    "sha256": "e4fe2bb4646ae78d6f2130744208afc12d2d19ab7b94f31014485202c53e1f00",
-    "upstream": "https://github.com/keiyoushi/extensions/releases/download/6ca40f6-0/tachiyomi-all.mangadex-v1.4.212.apk"
+    "apk": "tachiyomi-all.mangadex-v1.6.0.apk",
+    "sha256": "35d220b64162cb9409da47af81fbb09ae96f170ed77eaa0ffb440add65f92f35",
+    "upstream": "https://github.com/keiyoushi/extensions/releases/download/f303b9c/tachiyomi-all.mangadex-v1.6.0.apk"
   },
   "eu.kanade.tachiyomi.extension.all.mangaplus": {
-    "apk": "tachiyomi-all.mangaplus-v1.6.65.apk",
-    "sha256": "9864b1e299f663435af799a80ea1853ba6d1edb9197ca2c9ceb6a7c348dab54e",
-    "upstream": "https://github.com/keiyoushi/extensions/releases/download/6ca40f6-0/tachiyomi-all.mangaplus-v1.6.65.apk"
+    "apk": "tachiyomi-all.mangaplus-v1.6.66.apk",
+    "sha256": "e9511110525f81f30139704bda07b0a910e5100e42326570c5c9870a7529f94b",
+    "upstream": "https://github.com/keiyoushi/extensions/releases/download/1fbc35e/tachiyomi-all.mangaplus-v1.6.66.apk"
   },
   "eu.kanade.tachiyomi.extension.all.webtoons": {
     "apk": "tachiyomi-all.webtoons-v1.4.57.apk",
@@ -45,9 +45,9 @@
     "upstream": "https://github.com/keiyoushi/extensions/releases/download/6ca40f6-1/tachiyomi-es.manhwalatino-v1.4.63.apk"
   },
   "eu.kanade.tachiyomi.extension.es.manhwaonline": {
-    "apk": "tachiyomi-es.manhwaonline-v1.6.56.apk",
-    "sha256": "4e73fb852e11218ebcdff270781d5dffa5ad685f4551a70ca14988d854b79c20",
-    "upstream": "https://github.com/keiyoushi/extensions/releases/download/6ca40f6-1/tachiyomi-es.manhwaonline-v1.6.56.apk"
+    "apk": "tachiyomi-es.manhwaonline-v1.6.57.apk",
+    "sha256": "2ae77b0bfd3a3019be1bb65f9dfa4a885b4f4a1a31d326bd7c31618d69166179",
+    "upstream": "https://github.com/keiyoushi/extensions/releases/download/41a3655/tachiyomi-es.manhwaonline-v1.6.57.apk"
   },
   "eu.kanade.tachiyomi.extension.es.mhscans": {
     "apk": "tachiyomi-es.mhscans-v1.4.66.apk",
@@ -55,8 +55,8 @@
     "upstream": "https://github.com/keiyoushi/extensions/releases/download/6ca40f6-1/tachiyomi-es.mhscans-v1.4.66.apk"
   },
   "eu.kanade.tachiyomi.extension.es.mundomanhwa": {
-    "apk": "tachiyomi-es.mundomanhwa-v1.6.54.apk",
-    "sha256": "de32f10e0681dd4ecdb09899b961879c182be8abdf671102fc856fc151cf5578",
-    "upstream": "https://github.com/keiyoushi/extensions/releases/download/6ca40f6-1/tachiyomi-es.mundomanhwa-v1.6.54.apk"
+    "apk": "tachiyomi-es.mundomanhwa-v1.6.55.apk",
+    "sha256": "41441d109618693f0cdb609ed2a10134706d501eed30ec13b2e39c56aaca32c6",
+    "upstream": "https://github.com/keiyoushi/extensions/releases/download/41a3655/tachiyomi-es.mundomanhwa-v1.6.55.apk"
   }
 }

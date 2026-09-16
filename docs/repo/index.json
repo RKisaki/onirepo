@@ -51,12 +51,12 @@
         "name": "MANGA Plus by SHUEISHA",
         "packageName": "eu.kanade.tachiyomi.extension.all.mangaplus",
         "resources": {
-          "apkUrl": "https://RKisaki.github.io/onirepo/repo/apk/tachiyomi-all.mangaplus-v1.6.65.apk",
+          "apkUrl": "https://RKisaki.github.io/onirepo/repo/apk/tachiyomi-all.mangaplus-v1.6.66.apk",
           "iconUrl": "https://RKisaki.github.io/onirepo/repo/icon/eu.kanade.tachiyomi.extension.all.mangaplus.png"
         },
         "extensionLib": "1.6",
-        "versionCode": "106065",
-        "versionName": "1.6.65",
+        "versionCode": "106066",
+        "versionName": "1.6.66",
         "contentWarning": "CONTENT_WARNING_SAFE",
         "sources": [
           {
@@ -119,12 +119,12 @@
         "name": "MangaDex",
         "packageName": "eu.kanade.tachiyomi.extension.all.mangadex",
         "resources": {
-          "apkUrl": "https://RKisaki.github.io/onirepo/repo/apk/tachiyomi-all.mangadex-v1.4.212.apk",
+          "apkUrl": "https://RKisaki.github.io/onirepo/repo/apk/tachiyomi-all.mangadex-v1.6.0.apk",
           "iconUrl": "https://RKisaki.github.io/onirepo/repo/icon/eu.kanade.tachiyomi.extension.all.mangadex.png"
         },
-        "extensionLib": "1.4",
-        "versionCode": "104212",
-        "versionName": "1.4.212",
+        "extensionLib": "1.6",
+        "versionCode": "106000",
+        "versionName": "1.6.0",
         "contentWarning": "CONTENT_WARNING_MIXED",
         "sources": [
           {
@@ -579,12 +579,12 @@
         "name": "ManhwaOnline",
         "packageName": "eu.kanade.tachiyomi.extension.es.manhwaonline",
         "resources": {
-          "apkUrl": "https://RKisaki.github.io/onirepo/repo/apk/tachiyomi-es.manhwaonline-v1.6.56.apk",
+          "apkUrl": "https://RKisaki.github.io/onirepo/repo/apk/tachiyomi-es.manhwaonline-v1.6.57.apk",
           "iconUrl": "https://RKisaki.github.io/onirepo/repo/icon/eu.kanade.tachiyomi.extension.es.manhwaonline.png"
         },
         "extensionLib": "1.6",
-        "versionCode": "106056",
-        "versionName": "1.6.56",
+        "versionCode": "106057",
+        "versionName": "1.6.57",
         "contentWarning": "CONTENT_WARNING_NSFW",
         "sources": [
           {
@@ -619,12 +619,12 @@
         "name": "Mundo Manhwa",
         "packageName": "eu.kanade.tachiyomi.extension.es.mundomanhwa",
         "resources": {
-          "apkUrl": "https://RKisaki.github.io/onirepo/repo/apk/tachiyomi-es.mundomanhwa-v1.6.54.apk",
+          "apkUrl": "https://RKisaki.github.io/onirepo/repo/apk/tachiyomi-es.mundomanhwa-v1.6.55.apk",
           "iconUrl": "https://RKisaki.github.io/onirepo/repo/icon/eu.kanade.tachiyomi.extension.es.mundomanhwa.png"
         },
         "extensionLib": "1.6",
-        "versionCode": "106054",
-        "versionName": "1.6.54",
+        "versionCode": "106055",
+        "versionName": "1.6.55",
         "contentWarning": "CONTENT_WARNING_NSFW",
         "sources": [
           {
