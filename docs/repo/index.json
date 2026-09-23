@@ -539,12 +539,12 @@
         "name": "Mangas.in",
         "packageName": "eu.kanade.tachiyomi.extension.es.mangasin",
         "resources": {
-          "apkUrl": "https://RKisaki.github.io/onirepo/repo/apk/tachiyomi-es.mangasin-v1.4.21.apk",
+          "apkUrl": "https://RKisaki.github.io/onirepo/repo/apk/tachiyomi-es.mangasin-v1.4.22.apk",
           "iconUrl": "https://RKisaki.github.io/onirepo/repo/icon/eu.kanade.tachiyomi.extension.es.mangasin.png"
         },
         "extensionLib": "1.4",
-        "versionCode": "104021",
-        "versionName": "1.4.21",
+        "versionCode": "104022",
+        "versionName": "1.4.22",
         "contentWarning": "CONTENT_WARNING_MIXED",
         "sources": [
           {

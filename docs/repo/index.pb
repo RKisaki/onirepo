@@ -25,7 +25,7 @@ Khttps://RKisaki.github.io/onirepo/repo/apk/tachiyomi-es.mangamx-v1.4.19.apkXht
 Qhttps://RKisaki.github.io/onirepo/repo/apk/tachiyomi-es.mangasnosekai-v1.4.71.apk^https://RKisaki.github.io/onirepo/repo/icon/eu.kanade.tachiyomi.extension.es.mangasnosekai.png"1.4(‡­21.4.718B:¬Õı¡öØÀMangas No Sekaies"https://mangasnosekai.com
 ¡
 	Mangas.in)eu.kanade.tachiyomi.extension.es.mangasin©
-Lhttps://RKisaki.github.io/onirepo/repo/apk/tachiyomi-es.mangasin-v1.4.21.apkYhttps://RKisaki.github.io/onirepo/repo/icon/eu.kanade.tachiyomi.extension.es.mangasin.png"1.4(Õ¬21.4.218B*É°ÊÓ³²é´.	Mangas.ines"https://m440.in
+Lhttps://RKisaki.github.io/onirepo/repo/apk/tachiyomi-es.mangasin-v1.4.22.apkYhttps://RKisaki.github.io/onirepo/repo/icon/eu.kanade.tachiyomi.extension.es.mangasin.png"1.4(Ö¬21.4.228B*É°ÊÓ³²é´.	Mangas.ines"https://m440.in
 ¿
 Manhwa-Latino-eu.kanade.tachiyomi.extension.es.manhwalatino±
 Phttps://RKisaki.github.io/onirepo/repo/apk/tachiyomi-es.manhwalatino-v1.4.63.apk]https://RKisaki.github.io/onirepo/repo/icon/eu.kanade.tachiyomi.extension.es.manhwalatino.png"1.4(ÿ¬21.4.638B8Ó¬öÛÕÄÊŸ1Manhwa-Latinoes"https://manhwa-latino.com
